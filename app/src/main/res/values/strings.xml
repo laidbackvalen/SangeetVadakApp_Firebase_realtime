@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Firebase Sangeet Vadak WORKING ORIGINAL</string>
+    <string name="forgot_password_Text">If you have forgotten your password, please enter your accounts email address below and click the \"Reset My Password\" button. You will receive an email that  contain a link to set a new password.</string>
+    <string name="DataEntry">Tell us "\n"more about yourself!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

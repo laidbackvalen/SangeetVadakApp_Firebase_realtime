@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item
+    android:id="@+id/whatsNew"
+    android:title="What's New"
+    android:icon="@drawable/bolt"/>
+
+    <item
+    android:id="@+id/listeninghistory"
+    android:title="Listening history"
+        android:icon="@drawable/history_icon"/>
+
+    <item
+    android:id="@+id/settingsandprivacy"
+    android:title="Settings and privacy"
+        android:icon="@drawable/settings_icon"/>
+
+    <item
+    android:id="@+id/logout"
+    android:title="Log out"/>
+
+</menu>

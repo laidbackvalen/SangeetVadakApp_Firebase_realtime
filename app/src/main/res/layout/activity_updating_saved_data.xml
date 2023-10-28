@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    tools:context=".UpdatingSavedData">
+
+        <ImageView
+            android:id="@+id/updatingSavedDataBackIcon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/baseline_arrow_back_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/upText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/abeezee"
+            android:text="Update Your Profile"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="@id/updatingSavedDataBackIcon"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserFullName"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/updatingSavedDataBackIcon"
+            app:layout_constraintTop_toTopOf="@id/updatingSavedDataBackIcon" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/updateProfileCardView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserFullName"
+            app:layout_constraintStart_toStartOf="@+id/updatingRealtimeDatabaseUserFullName"
+            app:layout_constraintTop_toBottomOf="@+id/updatingSavedDataBackIcon">
+                <ImageView
+                    android:id="@+id/updateProfilePic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/justinbieber" />
+        </androidx.cardview.widget.CardView>
+
+
+        <EditText
+            android:id="@+id/updatingRealtimeDatabaseUserFullName"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_lines_email_password"
+            android:hint="Name"
+            android:paddingStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="10dp"
+            android:autofillHints="name"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/updateProfileCardView" />
+
+        <TextView
+            android:id="@+id/updatingsavingNameConfigMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#9D2323"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserFullName"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserFullName" />
+
+        <EditText
+            android:id="@+id/updatingRealtimeUserPhoneNumberCountryCode"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/background_lines_email_password"
+            android:hint="+91"
+            android:textColorHint="@color/black"
+            app:layout_constraintHorizontal_weight="0.3"
+            android:inputType="phone"
+            android:paddingStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toStartOf="@+id/updatingRealtimeDatabaseUserPhoneNumber"
+            app:layout_constraintStart_toStartOf="@+id/updatingRealtimeDatabaseUserFullName"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserFullName" />
+
+        <EditText
+            android:id="@+id/updatingRealtimeDatabaseUserPhoneNumber"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/background_lines_email_password"
+            android:hint="Phone Number"
+            android:autofillHints="phone"
+            android:inputType="phone"
+            android:paddingStart="12dp"
+            android:textColorHint="@color/black"
+            app:layout_constraintHorizontal_weight="0.7"
+            android:paddingTop="10dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="10dp"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/updatingRealtimeUserPhoneNumberCountryCode"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserFullName"
+            app:layout_constraintStart_toEndOf="@+id/updatingRealtimeUserPhoneNumberCountryCode"
+            app:layout_constraintTop_toTopOf="@+id/updatingRealtimeUserPhoneNumberCountryCode" />
+
+        <TextView
+            android:id="@+id/updatingPhoneConfigMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#9D2323"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserPhoneNumber"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserPhoneNumber" />
+
+        <EditText
+            android:id="@+id/updatingRealtimeDatabaseUserEmail"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/background_lines_email_password"
+            android:hint="Email Address"
+            android:autofillHints="emailAddress"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="10dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserPhoneNumber"
+            app:layout_constraintStart_toStartOf="@+id/updatingRealtimeUserPhoneNumberCountryCode"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserPhoneNumber" />
+
+        <TextView
+            android:id="@+id/updatingEmailConfigMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="#9D2323"
+            android:textSize="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserEmail"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserEmail" />
+
+        <EditText
+            android:id="@+id/updatingRealtimeDatabaseUserPassword"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/background_lines_email_password"
+            android:hint="Password"
+            android:autofillHints="password"
+            android:inputType="textPassword"
+            android:paddingStart="12dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="10dp"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserEmail"
+            app:layout_constraintStart_toStartOf="@+id/updatingRealtimeDatabaseUserEmail"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserEmail" />
+
+        <TextView
+            android:id="@+id/updatingPasswordConfigMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="10dp"
+            android:textColor="#9D2323"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserPassword"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserPassword" />
+
+        <Button
+            android:id="@+id/SubmitButtonTestingDatabase"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#9D2323"
+            android:padding="12dp"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:text="Submit"
+            app:layout_constraintEnd_toEndOf="@+id/updatingRealtimeDatabaseUserPassword"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/updatingRealtimeDatabaseUserPassword"
+            app:layout_constraintTop_toBottomOf="@+id/updatingRealtimeDatabaseUserPassword" />
+
+
+        <TextView
+            android:id="@+id/updatingDataMessageStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/SubmitButtonTestingDatabase"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/SubmitButtonTestingDatabase"
+            app:layout_constraintTop_toBottomOf="@+id/SubmitButtonTestingDatabase"
+            app:layout_constraintVertical_bias="0.438" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/test"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:gravity="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            app:layout_constraintBottom_toBottomOf="parent"-->
+<!--            app:layout_constraintEnd_toEndOf="@+id/SubmitButtonTestingDatabase"-->
+<!--            app:layout_constraintHorizontal_bias="0.0"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/SubmitButtonTestingDatabase"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/removingDataUpdateScreen"-->
+<!--            app:layout_constraintVertical_bias="0.2" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

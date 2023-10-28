@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    tools:context=".RetrievingDataInUserProfile">
+
+    <ImageView
+        android:id="@+id/profileBackIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/yourProfile"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/abeezee"
+        android:text="Your Profile"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/profileBackIcon"
+        app:layout_constraintEnd_toEndOf="@+id/profileUserFullName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/profileBackIcon"
+        app:layout_constraintTop_toTopOf="@id/profileBackIcon" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/profileCardView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/profileUserFullName"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/profileUserFullName"
+        app:layout_constraintTop_toBottomOf="@+id/yourProfile">
+
+        <ImageView
+            android:id="@+id/profilePic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="true"
+            android:scaleType="fitXY"
+            android:src="@drawable/justinbieber" />
+    </androidx.cardview.widget.CardView>
+
+
+    <TextView
+        android:id="@+id/profileUserFullName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:autofillHints="name"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="Name"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profileCardView" />
+
+
+    <TextView
+        android:id="@+id/profileUserCountryCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="+91"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:inputType="phone"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/profileUserPhoneNumber"
+        app:layout_constraintHorizontal_weight="0.3"
+        app:layout_constraintStart_toStartOf="@+id/profileUserFullName"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserFullName" />
+
+    <TextView
+        android:id="@+id/profileUserPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:autofillHints="phone"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/profileUserCountryCode"
+        app:layout_constraintEnd_toEndOf="@+id/profileUserFullName"
+        app:layout_constraintHorizontal_weight="0.7"
+        app:layout_constraintStart_toEndOf="@+id/profileUserCountryCode"
+        app:layout_constraintTop_toTopOf="@+id/profileUserCountryCode" />
+
+
+    <TextView
+        android:id="@+id/profileUserEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:autofillHints="emailAddress"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="Email Address"
+        android:inputType="textEmailAddress"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/profileUserPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/profileUserCountryCode"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserPhoneNumber" />
+
+
+    <Button
+        android:id="@+id/updateYourProfileButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#9D2323"
+        android:padding="12dp"
+        android:text="Update your profile?"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/profileUserEmail"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/profileUserEmail"
+        app:layout_constraintTop_toBottomOf="@+id/profileUserEmail" />
+
+    <TextView
+        android:id="@+id/removingDataUpdateScreen"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Remove Data?"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/white"
+        android:gravity="right"
+        android:fontFamily="@font/abeezee"
+        app:layout_constraintEnd_toEndOf="@+id/updateYourProfileButton"
+        app:layout_constraintStart_toStartOf="@+id/updateYourProfileButton"
+        app:layout_constraintTop_toBottomOf="@+id/updateYourProfileButton" />
+
+    <Button
+        android:id="@+id/buttonLogOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:backgroundTint="#9D2323"
+        android:text="Log Out"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.967"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/removingDataUpdateScreen"
+        app:layout_constraintVertical_bias="0.188" />
+
+    <TextView
+        android:id="@+id/removingDataMessageStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/removingDataUpdateScreen"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/removingDataUpdateScreen"
+        app:layout_constraintTop_toBottomOf="@+id/removingDataUpdateScreen"
+        app:layout_constraintVertical_bias="0.438" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

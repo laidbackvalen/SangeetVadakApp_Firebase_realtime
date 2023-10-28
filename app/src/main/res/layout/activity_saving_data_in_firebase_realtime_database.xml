@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    tools:context=".SavingDataInFirebaseRealtimeDatabase">
+
+    <ImageView
+        android:id="@+id/savingDataBackIcon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="15dp"
+        android:src="@drawable/baseline_arrow_back_24"
+        app:layout_constraintBottom_toTopOf="@+id/textView4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/abeezee"
+        android:text="@string/DataEntry"
+        android:textColor="@color/white"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/savingRealtimeDatabaseUserFullName"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserFullName"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/savingRealtimeDatabaseUserFullName"
+        app:layout_constraintTop_toBottomOf="@id/savingDataBackIcon" />
+
+    <EditText
+        android:id="@+id/savingRealtimeDatabaseUserFullName"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="Name"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:autofillHints="name"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView4" />
+
+    <TextView
+        android:id="@+id/savingNameConfigMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#9D2323"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserFullName"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserFullName" />
+
+    <EditText
+        android:id="@+id/savingRealtimeUserPhoneNumberCountryCode"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="+91"
+        android:textColorHint="@color/black"
+        app:layout_constraintHorizontal_weight="0.3"
+        android:inputType="phone"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/savingRealtimeDatabaseUserPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/savingRealtimeDatabaseUserFullName"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserFullName" />
+
+    <EditText
+        android:id="@+id/savingRealtimeDatabaseUserPhoneNumber"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="Phone Number"
+        android:autofillHints="phone"
+        android:inputType="phone"
+        android:paddingStart="12dp"
+        android:textColorHint="@color/black"
+        app:layout_constraintHorizontal_weight="0.7"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/savingRealtimeUserPhoneNumberCountryCode"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserFullName"
+        app:layout_constraintStart_toEndOf="@+id/savingRealtimeUserPhoneNumberCountryCode"
+        app:layout_constraintTop_toTopOf="@+id/savingRealtimeUserPhoneNumberCountryCode" />
+
+    <TextView
+        android:id="@+id/savingPhoneConfigMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#9D2323"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserPhoneNumber"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserPhoneNumber" />
+
+    <EditText
+        android:id="@+id/savingRealtimeDatabaseUserEmail"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="Email Address"
+        android:autofillHints="emailAddress"
+        android:inputType="textEmailAddress"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserPhoneNumber"
+        app:layout_constraintStart_toStartOf="@+id/savingRealtimeUserPhoneNumberCountryCode"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserPhoneNumber" />
+
+    <TextView
+        android:id="@+id/savingEmailConfigMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#9D2323"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserEmail"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserEmail" />
+
+    <EditText
+        android:id="@+id/savingRealtimeDatabaseUserPassword"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_lines_email_password"
+        android:hint="Password"
+        android:autofillHints="password"
+        android:inputType="textPassword"
+        android:paddingStart="12dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="10dp"
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserEmail"
+        app:layout_constraintStart_toStartOf="@+id/savingRealtimeDatabaseUserEmail"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserEmail" />
+
+    <TextView
+        android:id="@+id/savingPasswordConfigMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="10dp"
+        android:textColor="#9D2323"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserPassword"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserPassword" />
+
+    <Button
+        android:id="@+id/SubmitButtonTestingDatabase"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#9D2323"
+        android:padding="12dp"
+        android:textColor="@color/white"
+        android:textSize="15dp"
+        android:text="Submit"
+        app:layout_constraintEnd_toEndOf="@+id/savingRealtimeDatabaseUserPassword"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/savingRealtimeDatabaseUserPassword"
+        app:layout_constraintTop_toBottomOf="@+id/savingRealtimeDatabaseUserPassword" />
+
+    <TextView
+        android:id="@+id/savingDataMessageStatus"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#9D2323"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/SubmitButtonTestingDatabase"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/SubmitButtonTestingDatabase"
+        app:layout_constraintTop_toBottomOf="@+id/SubmitButtonTestingDatabase"
+        app:layout_constraintVertical_bias="0.342" />
+</androidx.constraintlayout.widget.ConstraintLayout>

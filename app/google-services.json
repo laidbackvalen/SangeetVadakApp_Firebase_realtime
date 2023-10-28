@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "213783592381",
+    "firebase_url": "https://fir-setup-c4232-default-rtdb.firebaseio.com",
+    "project_id": "fir-setup-c4232",
+    "storage_bucket": "fir-setup-c4232.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:213783592381:android:33243a4dcd58971cb3a6d4",
+        "android_client_info": {
+          "package_name": "com.example.firebasesetup"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8onMigds2OIWFMe7k3eS01r27ej0Cjno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

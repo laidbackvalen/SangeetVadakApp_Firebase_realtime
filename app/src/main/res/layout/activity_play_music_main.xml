@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".PlayMusicActivityMain">
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/search"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <HorizontalScrollView
+        android:id="@+id/hotizontalscrollmainact"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="15dp"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/back">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintInsideHorizontalmainact"
+            android:layout_width="0dp"
+            android:layout_height="56dp">
+
+            <TextView
+                android:id="@+id/text1"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:padding="5dp"
+                android:text="My Radio"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@+id/constraintInsideHorizontalmainact"
+                app:layout_constraintEnd_toStartOf="@id/text2"
+                app:layout_constraintStart_toStartOf="@+id/constraintInsideHorizontalmainact"
+                app:layout_constraintTop_toTopOf="@+id/constraintInsideHorizontalmainact" />
+
+            <TextView
+                android:id="@+id/text2"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:padding="5dp"
+                android:text="Romantic"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/text1"
+                app:layout_constraintEnd_toStartOf="@id/text3"
+                app:layout_constraintStart_toEndOf="@id/text1"
+                app:layout_constraintTop_toTopOf="@id/text1" />
+
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:padding="5dp"
+                android:text="Sad"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/text2"
+                app:layout_constraintEnd_toStartOf="@id/text4"
+                app:layout_constraintStart_toEndOf="@id/text2"
+                app:layout_constraintTop_toTopOf="@id/text2" />
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:padding="5dp"
+                android:text="Workout"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/text3"
+                app:layout_constraintEnd_toStartOf="@id/text5"
+                app:layout_constraintStart_toEndOf="@id/text3"
+                app:layout_constraintTop_toTopOf="@id/text3" />
+
+            <TextView
+                android:id="@+id/text5"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:padding="5dp"
+                android:text="Party"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/text4"
+                app:layout_constraintEnd_toStartOf="@id/text6"
+                app:layout_constraintStart_toEndOf="@id/text4"
+                app:layout_constraintTop_toTopOf="@id/text4" />
+
+            <TextView
+                android:id="@+id/text6"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:padding="5dp"
+                android:text="Bhangra"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/text5"
+                app:layout_constraintEnd_toStartOf="@id/text7"
+                app:layout_constraintStart_toEndOf="@id/text5"
+                app:layout_constraintTop_toTopOf="@id/text5" />
+
+            <TextView
+                android:id="@+id/text7"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:padding="5dp"
+                android:text="90's"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/text6"
+                app:layout_constraintEnd_toEndOf="@id/text8"
+                app:layout_constraintStart_toEndOf="@id/text6"
+                app:layout_constraintTop_toTopOf="@id/text6" />
+
+            <TextView
+                android:id="@+id/text8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/rec_radius_bg"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+                android:text="My Top Songs"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="15dp"
+                app:layout_constraintBottom_toBottomOf="@id/text7"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/text7"
+                app:layout_constraintTop_toTopOf="@id/text7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </HorizontalScrollView>
+
+    <com.smarteist.autoimageslider.SliderView
+        android:id="@+id/sliderView"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:fitsSystemWindows="true"
+        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hotizontalscrollmainact" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/homeIcon"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toStartOf="@id/musicIcon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:srcCompat="@drawable/baseline_home_24" />
+
+    <TextView
+        android:id="@+id/textHome"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Home"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintEnd_toEndOf="@id/homeIcon"
+        app:layout_constraintStart_toStartOf="@id/homeIcon"
+        app:layout_constraintTop_toBottomOf="@id/homeIcon" />
+
+    <ImageView
+        android:id="@+id/musicIcon"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/homeIcon"
+        app:layout_constraintEnd_toStartOf="@id/musicPlay"
+        app:layout_constraintStart_toEndOf="@+id/homeIcon"
+        app:layout_constraintTop_toTopOf="@+id/homeIcon"
+        app:srcCompat="@drawable/baseline_music_note_24" />
+
+    <TextView
+        android:id="@+id/musicText"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="My Music"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/textHome"
+        app:layout_constraintEnd_toStartOf="@id/musicPlay"
+        app:layout_constraintStart_toEndOf="@id/textHome"
+        app:layout_constraintTop_toTopOf="@id/textHome" />
+
+    <ImageView
+        android:id="@+id/musicPlay"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tunes"
+        app:layout_constraintStart_toEndOf="@+id/musicIcon"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:srcCompat="@drawable/baseline_play_arrow_24" />
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/textHome"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="25dp"-->
+    <!--        android:layout_marginBottom="10dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:text="Home"-->
+    <!--        android:textColor="@color/white"-->
+    <!--        android:textSize="10sp"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/view"-->
+    <!--        app:layout_constraintEnd_toEndOf="@id/homeIcon"-->
+    <!--        app:layout_constraintStart_toStartOf="@id/homeIcon"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/homeIcon" />-->
+
+    <ImageView
+        android:id="@+id/tunes"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/musicPlay"
+        app:layout_constraintEnd_toStartOf="@id/Settings"
+        app:layout_constraintStart_toEndOf="@+id/musicPlay"
+        app:layout_constraintTop_toTopOf="@+id/musicPlay"
+        app:srcCompat="@drawable/baseline_tune_24" />
+
+    <TextView
+        android:id="@+id/textHellotunes"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+
+        android:gravity="center"
+        android:text="Hello Tunes"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/musicText"
+        app:layout_constraintEnd_toStartOf="@id/textSettings"
+        app:layout_constraintStart_toEndOf="@id/musicPlay"
+        app:layout_constraintTop_toTopOf="@id/musicText" />
+
+    <ImageView
+        android:id="@+id/Settings"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/tunes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tunes"
+        app:layout_constraintTop_toTopOf="@+id/tunes"
+        app:srcCompat="@drawable/baseline_settings_suggest_24" />
+
+    <TextView
+        android:id="@+id/textSettings"
+        android:layout_width="0dp"
+        android:layout_height="25dp"
+        android:gravity="center"
+        android:text="Settings"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@id/textHellotunes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textHellotunes"
+        app:layout_constraintTop_toTopOf="@id/textHellotunes" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
