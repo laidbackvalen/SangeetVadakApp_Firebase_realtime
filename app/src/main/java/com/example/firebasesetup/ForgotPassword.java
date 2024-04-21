@@ -27,22 +27,17 @@ public class ForgotPassword extends AppCompatActivity {
     Button resetpassword;
     TextView returnToLogin, txtEmailStatusMessage, statusMessage;
     ImageView backIconForgotPassword;
-
     FirebaseAuth firebaseAuth;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_forgot_password);
-
         emailInput = findViewById(R.id.editTextEmailInput);
         resetpassword = findViewById(R.id.buttonResetYourPassword);
         returnToLogin = findViewById(R.id.textReturnToLoginPage);
         txtEmailStatusMessage = findViewById(R.id.emailInputStatus);
         statusMessage = findViewById(R.id.statusMessages);
         backIconForgotPassword = findViewById(R.id.backIconimageForgotPassword);
-
         firebaseAuth = FirebaseAuth.getInstance();
 
 

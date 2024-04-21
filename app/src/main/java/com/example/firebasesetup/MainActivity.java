@@ -30,6 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -47,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        firebaseAuth = FirebaseAuth.getInstance();
 
         menuBurgerIcon = findViewById(R.id.burgerIconMenuNavDrawer);
         nameMainAct = findViewById(R.id.nameMainActivity);
-        firebaseAuth = FirebaseAuth.getInstance();
         view = findViewById(R.id.view3);
         musisplayIcon = findViewById(R.id.musicPlay);
-        recreate();
+//        recreate();
 
         //VIEW PAGER SETTINGS Starts HERE
         viewPagerMain = findViewById(R.id.viewPager);
@@ -101,6 +102,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 musisplayIcon.setImageResource(R.drawable.pause);
+                startActivity(new Intent(MainActivity.this, PlayMusicActivityMain.class));
+                finish();
             }
         });
 
@@ -116,17 +119,14 @@ public class MainActivity extends AppCompatActivity {
 //                fragmentTransaction.replace(R.id.container,fragment).commit();
 
                 menuBurgerIcon.setImageResource(R.drawable.baseline_close_24);
-                recreate();
+//                recreate();
 
             }
         });
 
 
-        firebaseAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        assert user != null;
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("SangeetVadakApp").child("UserInfo").child(user.getUid());
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("SangeetVadakApp").child("UserInfo").child(Objects.requireNonNull(firebaseAuth.getUid()));
         databaseReference.addValueEventListener(new ValueEventListener() {
 
             @Override

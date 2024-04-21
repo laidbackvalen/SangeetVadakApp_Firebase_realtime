@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -28,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
     private Button loginbutton;
     private TextView txtWelcomeBackForTestingLayout, registerUser, forgetpassword, txtpasswordStatus, txtEmailStatusMessage, txtStatusMessage;
     FirebaseAuth firebaseAuth;   //abstract class
-    DatabaseReference databaseReference;
+//    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,21 +153,75 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void userSignIn(String email, String password) {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
 //                        assert user != null;
+                    FirebaseUser user = task.getResult().getUser();
                     if (task.getResult().getUser().isEmailVerified()) {
 
                         txtStatusMessage.setText("User SignIn Successfully");
 
-//addvalueEventListener
+//add value listener to check whether user exist // use for loop
 
-                        startActivity(new Intent(LoginActivity.this, SavingDataInFirebaseRealtimeDatabase.class));
-                        finish();
+
+                        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("SangeetVadakApp").child("UserInfo").child(user.getUid());
+
+
+                        databaseReference.addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                if (snapshot.exists()) {
+
+                                    ModelClassData modelClassData = snapshot.getValue(ModelClassData.class);
+                                    assert modelClassData != null;
+                                    String name = modelClassData.getName();
+
+                                    Log.d("TAG_name", "onDataChange: " + name);
+
+                                    if (name != null) {
+                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                        finish();
+                                    } else {
+                                        startActivity(new Intent(LoginActivity.this, SavingDataInFirebaseRealtimeDatabase.class));
+                                        finish();
+                                    }
+                                }else{
+                                    startActivity(new Intent(LoginActivity.this, SavingDataInFirebaseRealtimeDatabase.class));
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
+                                Log.d("TAG_name", "onCancelled: " + error.getMessage());
+                            }
+                        });
+
+//                        databaseReference.addValueEventListener(new ValueEventListener() {
+//                            @Override
+//                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+////                                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+//                                    if(!snapshot.exists()){
+////                                        Log.d("TAG_status", "onDataChange: "+snapshot);
+//                                    Log.d("TAG_status", "onDataChange: "+user.getUid());
+//                                    startActivity(new Intent(LoginActivity.this, SavingDataInFirebaseRealtimeDatabase.class));
+//                                    }
+//                                }
+////                            }
+//
+//
+//                            @Override
+//                            public void onCancelled(@NonNull DatabaseError error) {
+//
+//                            }
+//                        });
+
+//addvalueEventListener
+//
+//                        startActivity(new Intent(LoginActivity.this, SavingDataInFirebaseRealtimeDatabase.class));
+//                        finish();
 
                     } else {
                         txtStatusMessage.setText("Email Not Verified");
@@ -177,6 +233,11 @@ public class LoginActivity extends AppCompatActivity {
             }
 
 
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.d("TAG_name", "onFailure: " + e.getMessage());
+            }
         });
     }
 }
