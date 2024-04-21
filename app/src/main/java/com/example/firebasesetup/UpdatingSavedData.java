@@ -290,8 +290,8 @@ public class UpdatingSavedData extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            firebaseAuth.signOut();
-                            startActivity(new Intent(UpdatingSavedData.this, LoginActivity.class));
+//                            firebaseAuth.signOut();
+//                            startActivity(new Intent(UpdatingSavedData.this, LoginActivity.class));
                             finish();
                         }
                     }

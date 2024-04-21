@@ -24,863 +24,998 @@
 
     <!--Constraints layout For Main Activity-->
 
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:fitsSystemWindows="true">-->
+
+    <!--        <androidx.coordinatorlayout.widget.CoordinatorLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="0dp"-->
+    <!--            android:fitsSystemWindows="true"-->
+    <!--            app:layout_constraintBottom_toTopOf="@+id/view"-->
+    <!--            app:layout_constraintEnd_toEndOf="parent"-->
+    <!--            app:layout_constraintStart_toStartOf="parent"-->
+    <!--            app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--            <com.google.android.material.appbar.AppBarLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content">-->
+    <!--NOTHING TO COLLAPSE-->
+    <!--            <com.google.android.material.appbar.CollapsingToolbarLayout-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
+    <!--            </com.google.android.material.appbar.CollapsingToolbarLayout>-->
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/notMovingTopPart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true">
+        android:layout_height="wrap_content"
+        android:background="@color/black">
 
-        <androidx.coordinatorlayout.widget.CoordinatorLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:fitsSystemWindows="true"
-            app:layout_constraintBottom_toTopOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="parent"
+        <View
+            android:id="@+id/view2"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            app:layout_constraintEnd_toStartOf="@id/view3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <com.google.android.material.appbar.AppBarLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <!--NOTHING TO COLLAPSE-->
-                <!--            <com.google.android.material.appbar.CollapsingToolbarLayout-->
-                <!--                android:layout_width="match_parent"-->
-                <!--                android:layout_height="wrap_content"-->
-                <!--                app:layout_scrollFlags="scroll|exitUntilCollapsed">-->
-                <!--            </com.google.android.material.appbar.CollapsingToolbarLayout>-->
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/notMovingTopPart"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/black">
+        <View
+            android:id="@+id/view3"
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            app:layout_constraintBottom_toBottomOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view2"
+            app:layout_constraintTop_toTopOf="@id/view2" />
 
-                    <View
-                        android:id="@+id/view2"
-                        android:layout_width="0dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintEnd_toStartOf="@id/view3"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+        <ImageView
+            android:id="@+id/burgerIconMenuNavDrawer"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/baseline_menu_24"
+            app:layout_constraintStart_toStartOf="@+id/view2"
+            app:layout_constraintTop_toTopOf="@+id/view2" />
 
-                    <View
-                        android:id="@+id/view3"
-                        android:layout_width="0dp"
-                        android:layout_height="70dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/view2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@id/view2"
-                        app:layout_constraintTop_toTopOf="@id/view2" />
+        <TextView
+            android:id="@+id/nameMainActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="25dp"
+            android:fontFamily="@font/abeezee"
+            android:gravity="center"
+            android:text="Hi, User!"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/liveYourDay"
+            app:layout_constraintEnd_toEndOf="@+id/view3" />
 
+        <TextView
+            android:id="@+id/liveYourDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live your day with Music"
+            android:textColor="#F44336"
+            app:layout_constraintBottom_toBottomOf="@+id/burgerIconMenuNavDrawer"
+            app:layout_constraintEnd_toEndOf="@+id/nameMainActivity"
+            app:layout_constraintTop_toBottomOf="@+id/musicIconCardView" />
 
-                    <ImageView
-                        android:id="@+id/burgerIconMenuNavDrawer"
-                        android:layout_width="45dp"
-                        android:layout_height="45dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/baseline_menu_24"
-                        app:layout_constraintStart_toStartOf="@+id/view2"
-                        app:layout_constraintTop_toTopOf="@+id/view2" />
+        <androidx.cardview.widget.CardView
+            android:id="@+id/musicIconCardView"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/black"
+            app:cardCornerRadius="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/nameMainActivity"
+            app:layout_constraintEnd_toStartOf="@+id/nameMainActivity"
+            app:layout_constraintTop_toTopOf="@+id/nameMainActivity">
 
-                    <TextView
-                        android:id="@+id/nameMainActivity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="17dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="25dp"
-                        android:fontFamily="@font/abeezee"
-                        android:gravity="center"
-                        android:text="Hi, User!"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toTopOf="@+id/liveYourDay"
-                        app:layout_constraintEnd_toEndOf="@+id/view3" />
-
-                    <TextView
-                        android:id="@+id/liveYourDay"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Live your day with Music"
-                        android:textColor="#F44336"
-                        app:layout_constraintBottom_toBottomOf="@+id/burgerIconMenuNavDrawer"
-                        app:layout_constraintEnd_toEndOf="@+id/nameMainActivity"
-                        app:layout_constraintTop_toBottomOf="@+id/musicIconCardView" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/musicIconCardView"
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_marginEnd="10dp"
-                        android:backgroundTint="@color/black"
-                        app:cardCornerRadius="2dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/nameMainActivity"
-                        app:layout_constraintEnd_toStartOf="@+id/nameMainActivity"
-                        app:layout_constraintTop_toTopOf="@+id/nameMainActivity">
-
-                        <ImageView
-                            android:id="@+id/imageView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@drawable/mic_original"
-                            app:tint="#F44336" />
-                    </androidx.cardview.widget.CardView>
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </com.google.android.material.appbar.AppBarLayout>
-
-
-            <androidx.core.widget.NestedScrollView
+            <ImageView
+                android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                android:fillViewport="true"
-                android:fitsSystemWindows="true"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+                android:src="@drawable/mic_original"
+                app:tint="#F44336" />
+        </androidx.cardview.widget.CardView>
+        <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <!--            </com.google.android.material.appbar.AppBarLayout>-->
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#070707"
-                    android:fitsSystemWindows="true">
 
-                    <ImageView
-                        android:id="@+id/imageView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:src="@drawable/searchicon"
-                        app:layout_constraintBottom_toBottomOf="@+id/viewSearchBar"
-                        app:layout_constraintStart_toStartOf="@+id/viewSearchBar"
-                        app:layout_constraintTop_toTopOf="@+id/viewSearchBar"
-                        app:tint="#F44336" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/viewSearchBar"
-                        android:layout_width="0dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="25dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="20dp"
-                        android:backgroundTint="#19FFFFFF"
-                        app:cardCornerRadius="15dp"
-                        app:layout_constraintBottom_toTopOf="@+id/categoryText"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="20dp"
-                        android:text="What do you want to listen?"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="@+id/viewSearchBar"
-                        app:layout_constraintStart_toEndOf="@+id/imageView7"
-                        app:layout_constraintTop_toTopOf="@+id/viewSearchBar" />
-                    <!--Category-->
-                    <TextView
-                        android:id="@+id/categoryText"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:text="Categories"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#F44336"
-                        app:layout_constraintEnd_toStartOf="@id/more"
-                        app:layout_constraintHorizontal_weight="0.5"
-                        app:layout_constraintStart_toStartOf="@+id/viewSearchBar"
-                        app:layout_constraintTop_toBottomOf="@+id/viewSearchBar" />
-
-                    <TextView
-                        android:id="@+id/more"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="end"
-                        android:text="More"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="@+id/categoryText"
-                        app:layout_constraintEnd_toEndOf="@+id/viewSearchBar"
-                        app:layout_constraintHorizontal_weight="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/categoryText"
-                        app:layout_constraintTop_toTopOf="@+id/categoryText" />
-
-                    <!--HorizontalScrollView Below Category -->
-
-                    <HorizontalScrollView
-                        android:id="@+id/horizontalScrollView"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:fillViewport="true"
-                        android:fitsSystemWindows="true"
-                        android:scrollbars="none"
-                        app:layout_constraintEnd_toEndOf="@id/more"
-                        app:layout_constraintStart_toStartOf="@id/categoryText"
-                        app:layout_constraintTop_toBottomOf="@+id/categoryText">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintUnderhorizontalScrollView1"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent">
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardCategoryOne"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="20dp"
-                                android:layout_marginBottom="5dp"
-                                app:cardCornerRadius="60dp"
-                                app:layout_constraintBottom_toTopOf="@id/trendingText"
-                                app:layout_constraintEnd_toStartOf="@id/cardCategoryTwo"
-                                app:layout_constraintStart_toStartOf="@id/constraintUnderhorizontalScrollView1"
-                                app:layout_constraintTop_toTopOf="@id/constraintUnderhorizontalScrollView1">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:fitsSystemWindows="true"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/an" />
-
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/trendingText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Trending"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@id/constraintUnderhorizontalScrollView1"
-                                app:layout_constraintEnd_toEndOf="@id/cardCategoryOne"
-                                app:layout_constraintStart_toStartOf="@id/cardCategoryOne"
-                                app:layout_constraintTop_toBottomOf="@id/cardCategoryOne" />
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardCategoryTwo"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="20dp"
-                                app:cardCornerRadius="60dp"
-                                app:layout_constraintBottom_toBottomOf="@id/cardCategoryOne"
-                                app:layout_constraintEnd_toStartOf="@id/cardCategoryThree"
-                                app:layout_constraintStart_toEndOf="@id/cardCategoryOne"
-                                app:layout_constraintTop_toTopOf="@id/cardCategoryOne">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/bn" />
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/topChartsText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Top Charts"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@+id/trendingText"
-                                app:layout_constraintEnd_toEndOf="@id/cardCategoryTwo"
-                                app:layout_constraintStart_toStartOf="@id/cardCategoryTwo"
-                                app:layout_constraintTop_toTopOf="@+id/trendingText" />
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardCategoryThree"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="20dp"
-                                app:cardCornerRadius="60dp"
-                                app:layout_constraintBottom_toBottomOf="@id/cardCategoryTwo"
-                                app:layout_constraintEnd_toStartOf="@id/cardCategoryFour"
-                                app:layout_constraintStart_toEndOf="@id/cardCategoryTwo"
-                                app:layout_constraintTop_toTopOf="@id/cardCategoryTwo">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/cn" />
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/weeklyText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Weekly"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@+id/trendingText"
-                                app:layout_constraintEnd_toEndOf="@id/cardCategoryThree"
-                                app:layout_constraintStart_toStartOf="@id/cardCategoryThree"
-                                app:layout_constraintTop_toTopOf="@+id/topChartsText" />
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardCategoryFour"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="20dp"
-                                app:cardCornerRadius="60dp"
-                                app:layout_constraintBottom_toBottomOf="@id/cardCategoryThree"
-                                app:layout_constraintEnd_toStartOf="@id/cardCategoryFive"
-                                app:layout_constraintStart_toEndOf="@id/cardCategoryThree"
-                                app:layout_constraintTop_toTopOf="@id/cardCategoryThree">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/dn" />
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/favoriteText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Favorites"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@+id/trendingText"
-                                app:layout_constraintEnd_toEndOf="@id/cardCategoryFour"
-                                app:layout_constraintStart_toStartOf="@id/cardCategoryFour"
-                                app:layout_constraintTop_toTopOf="@+id/topChartsText" />
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardCategoryFive"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="20dp"
-                                app:cardCornerRadius="60dp"
-                                app:layout_constraintBottom_toBottomOf="@id/cardCategoryFour"
-                                app:layout_constraintEnd_toStartOf="@id/cardCategorySix"
-                                app:layout_constraintStart_toEndOf="@id/cardCategoryFour"
-                                app:layout_constraintTop_toTopOf="@id/cardCategoryFour">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/en" />
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/countrySpecialText"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:text="Country's S.."
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@+id/trendingText"
-                                app:layout_constraintEnd_toEndOf="@id/cardCategoryFive"
-                                app:layout_constraintStart_toStartOf="@id/cardCategoryFive"
-                                app:layout_constraintTop_toTopOf="@+id/topChartsText" />
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardCategorySix"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="20dp"
-                                app:cardCornerRadius="60dp"
-                                app:layout_constraintBottom_toBottomOf="@id/cardCategoryFive"
-                                app:layout_constraintEnd_toStartOf="@id/cardCategorySeven"
-                                app:layout_constraintStart_toEndOf="@id/cardCategoryFive"
-                                app:layout_constraintTop_toTopOf="@id/cardCategoryFive">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/fn" />
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/hipHop"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:text="Hip Hop"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@+id/trendingText"
-                                app:layout_constraintEnd_toEndOf="@id/cardCategorySix"
-                                app:layout_constraintStart_toStartOf="@id/cardCategorySix"
-                                app:layout_constraintTop_toTopOf="@+id/topChartsText" />
-
-                            <androidx.cardview.widget.CardView
-                                android:id="@+id/cardCategorySeven"
-                                android:layout_width="60dp"
-                                android:layout_height="60dp"
-                                android:layout_marginEnd="20dp"
-                                app:cardCornerRadius="60dp"
-                                app:layout_constraintBottom_toBottomOf="@id/cardCategorySix"
-                                app:layout_constraintEnd_toEndOf="@id/constraintUnderhorizontalScrollView1"
-                                app:layout_constraintStart_toEndOf="@id/cardCategorySix"
-                                app:layout_constraintTop_toTopOf="@id/cardCategorySix">
-
-                                <ImageView
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:scaleType="fitXY"
-                                    android:src="@drawable/gn" />
-                            </androidx.cardview.widget.CardView>
-
-                            <TextView
-                                android:id="@+id/instrumental"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:ellipsize="end"
-                                android:text="Instrumental"
-                                android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@+id/trendingText"
-                                app:layout_constraintEnd_toEndOf="@id/cardCategorySeven"
-                                app:layout_constraintStart_toStartOf="@id/cardCategorySeven"
-                                app:layout_constraintTop_toTopOf="@+id/topChartsText" />
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </HorizontalScrollView>
-
-
-                    <!--VIEWPAGE2 Starts -->
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/viewPager"
-                        android:layout_width="0dp"
-                        android:layout_height="190dp"
-                        android:layout_marginTop="20dp"
-
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
-
-                    <!--VIEWPAGE2 Ends-->
-
-                    <!--Artist-->
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/lottieMainArtist"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="10dp"
-                        app:layout_constraintEnd_toStartOf="@id/artist"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/viewPager"
-                        app:lottie_autoPlay="true"
-                        app:lottie_loop="true"
-                        app:lottie_rawRes="@raw/discoballlottie" />
-
-                    <TextView
-                        android:id="@+id/artist"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="7dp"
-                        android:text="Artist"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#F44336"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@id/lottieMainArtist"
-                        app:layout_constraintEnd_toStartOf="@id/artistmore"
-                        app:layout_constraintHorizontal_weight="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/lottieMainArtist"
-                        app:layout_constraintTop_toTopOf="@id/lottieMainArtist" />
-
-                    <TextView
-                        android:id="@+id/artistmore"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="end"
-                        android:text="More"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="@+id/artist"
-                        app:layout_constraintEnd_toEndOf="@+id/more"
-                        app:layout_constraintHorizontal_weight="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/artist"
-                        app:layout_constraintTop_toTopOf="@+id/artist" />
-
-                    <!--Below Artist-->
-                    <HorizontalScrollView
-                        android:id="@+id/horizontalScrollView2"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="15dp"
-                        android:fillViewport="true"
-                        android:fitsSystemWindows="true"
-                        android:scrollbars="none"
-                        app:layout_constraintEnd_toEndOf="@+id/artistmore"
-                        app:layout_constraintStart_toStartOf="@+id/lottieMainArtist"
-                        app:layout_constraintTop_toBottomOf="@+id/lottieMainArtist">
-
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintUnderhorizontalScrollView2"
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent">
-
-                            <ImageView
-                                android:id="@+id/justinBieberImg"
-                                android:layout_width="0dp"
-                                android:layout_height="100dp"
-                                android:layout_marginEnd="20dp"
-                                android:fitsSystemWindows="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/justinbieber"
-                                app:layout_constraintBottom_toTopOf="@id/justinBiebertext"
-                                app:layout_constraintEnd_toStartOf="@id/marshmelloImg"
-                                app:layout_constraintStart_toStartOf="@id/constraintUnderhorizontalScrollView2"
-                                app:layout_constraintTop_toTopOf="@id/constraintUnderhorizontalScrollView2" />
-
-                            <TextView
-                                android:id="@+id/justinBiebertext"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:text="Justin Bieber"
-                                android:textColor="@color/white"
-                                app:layout_constraintEnd_toEndOf="@id/justinBieberImg"
-                                app:layout_constraintStart_toStartOf="@id/justinBieberImg"
-                                app:layout_constraintTop_toBottomOf="@id/justinBieberImg" />
-
-                            <ImageView
-                                android:id="@+id/marshmelloImg"
-                                android:layout_width="0dp"
-                                android:layout_height="100dp"
-                                android:layout_marginEnd="15dp"
-                                android:fitsSystemWindows="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/marshmello"
-                                app:layout_constraintBottom_toBottomOf="@id/justinBieberImg"
-                                app:layout_constraintEnd_toStartOf="@id/duaLipaImg"
-                                app:layout_constraintStart_toEndOf="@id/justinBieberImg"
-                                app:layout_constraintTop_toTopOf="@id/justinBieberImg" />
-
-                            <TextView
-                                android:id="@+id/marshmellotext"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Marshmello"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@id/justinBiebertext"
-                                app:layout_constraintEnd_toEndOf="@id/marshmelloImg"
-                                app:layout_constraintStart_toStartOf="@id/marshmelloImg"
-                                app:layout_constraintTop_toTopOf="@id/justinBiebertext" />
-
-                            <ImageView
-                                android:id="@+id/duaLipaImg"
-                                android:layout_width="0dp"
-                                android:layout_height="100dp"
-                                android:layout_marginEnd="15dp"
-                                android:fitsSystemWindows="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/dualip"
-                                app:layout_constraintBottom_toBottomOf="@id/marshmelloImg"
-                                app:layout_constraintEnd_toStartOf="@id/theweekendImg"
-                                app:layout_constraintStart_toEndOf="@id/marshmelloImg"
-                                app:layout_constraintTop_toTopOf="@id/marshmelloImg" />
-
-                            <TextView
-                                android:id="@+id/duaLipatext"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Dua Lipa"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@id/marshmellotext"
-                                app:layout_constraintEnd_toEndOf="@id/duaLipaImg"
-                                app:layout_constraintStart_toStartOf="@id/duaLipaImg"
-                                app:layout_constraintTop_toTopOf="@id/marshmellotext" />
-
-                            <ImageView
-                                android:id="@+id/theweekendImg"
-                                android:layout_width="0dp"
-                                android:layout_height="100dp"
-                                android:layout_marginEnd="15dp"
-                                android:fitsSystemWindows="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/theweekendmini"
-                                app:layout_constraintBottom_toBottomOf="@id/duaLipaImg"
-                                app:layout_constraintEnd_toStartOf="@id/drakeImg"
-                                app:layout_constraintStart_toEndOf="@id/duaLipaImg"
-                                app:layout_constraintTop_toTopOf="@id/duaLipaImg" />
-
-                            <TextView
-                                android:id="@+id/theweekendtext"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="The Weekend"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@id/duaLipatext"
-                                app:layout_constraintEnd_toEndOf="@id/theweekendImg"
-                                app:layout_constraintStart_toStartOf="@id/theweekendImg"
-                                app:layout_constraintTop_toTopOf="@id/duaLipatext" />
-
-                            <ImageView
-                                android:id="@+id/drakeImg"
-                                android:layout_width="0dp"
-                                android:layout_height="100dp"
-                                android:layout_marginEnd="15dp"
-                                android:fitsSystemWindows="true"
-                                android:scaleType="fitXY"
-                                android:src="@drawable/drakemini"
-                                app:layout_constraintBottom_toBottomOf="@id/theweekendImg"
-                                app:layout_constraintEnd_toEndOf="@id/constraintUnderhorizontalScrollView2"
-                                app:layout_constraintStart_toEndOf="@id/theweekendImg"
-                                app:layout_constraintTop_toTopOf="@id/theweekendImg" />
-
-                            <TextView
-                                android:id="@+id/draketext"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Drake"
-                                android:textColor="@color/white"
-                                app:layout_constraintBottom_toBottomOf="@id/marshmellotext"
-                                app:layout_constraintEnd_toEndOf="@id/drakeImg"
-                                app:layout_constraintStart_toStartOf="@id/drakeImg"
-                                app:layout_constraintTop_toTopOf="@id/marshmellotext" />
-
-
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </HorizontalScrollView>
-
-                    <!--Artist Ends-->
-
-                    <!--View Below Artist-->
-                    <View
-                        android:id="@+id/viewTaylorSwift"
-                        android:layout_width="0dp"
-                        android:layout_height="170dp"
-                        android:layout_marginTop="40dp"
-                        android:background="#17000000"
-                        app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView2"
-                        app:layout_constraintHorizontal_bias="0.0"
-                        app:layout_constraintStart_toStartOf="@+id/horizontalScrollView2"
-                        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
-
-                    <ImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/taylorsmall"
-                        app:layout_constraintStart_toStartOf="@+id/viewTaylorSwift"
-                        app:layout_constraintTop_toTopOf="@+id/viewTaylorSwift" />
-
-                    <TextView
-                        android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="2dp"
-                        android:text="New Releases:"
-                        android:textColor="#F44336"
-                        app:layout_constraintStart_toEndOf="@+id/imageView2"
-                        app:layout_constraintTop_toTopOf="@+id/imageView2" />
-
-                    <TextView
-                        android:id="@+id/textView7"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:text="Taylor Swift"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView2"
-                        app:layout_constraintStart_toStartOf="@+id/textView6" />
-
-                    <ImageView
-                        android:id="@+id/imageView6"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/rectaylor"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView5"
-                        app:layout_constraintEnd_toEndOf="@id/viewTaylorSwift"
-                        app:layout_constraintStart_toStartOf="@id/viewTaylorSwift"
-                        app:layout_constraintTop_toTopOf="@+id/imageView5" />
-
-                    <ImageView
-                        android:id="@+id/imageView5"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:src="@drawable/whitebgtaylor"
-                        app:layout_constraintBottom_toBottomOf="@+id/viewTaylorSwift"
-                        app:layout_constraintStart_toStartOf="@+id/imageView2" />
-
-                    <TextView
-                        android:id="@+id/textView10"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Midnights"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textColor="@color/white"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toEndOf="@+id/imageView5"
-                        app:layout_constraintTop_toTopOf="@+id/imageView6" />
-
-                    <TextView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Album"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white"
-                        app:layout_constraintStart_toStartOf="@+id/textView10"
-                        app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/taylorSwiftmusicIconCardViewMain"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:backgroundTint="#43FFFFFF"
-                        app:cardCornerRadius="70dp"
-                        app:layout_constraintBottom_toBottomOf="@+id/viewTaylorSwift"
-                        app:layout_constraintEnd_toEndOf="@+id/imageView6">
-
-                        <ImageView
-                            android:id="@+id/taylorSwiftmusicPlay"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:layout_gravity="center"
-                            app:srcCompat="@drawable/baseline_play_arrow_24" />
-                    </androidx.cardview.widget.CardView>
-
-                    <!--View Below Artist Ends-->
-
-                    <!-- RECENTLY PLAYED-->
-                    <com.airbnb.lottie.LottieAnimationView
-                        android:id="@+id/lottieMain"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="40dp"
-                        app:layout_constraintBottom_toTopOf="@+id/testt"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/viewTaylorSwift"
-                        app:lottie_autoPlay="true"
-                        app:lottie_loop="true"
-                        app:lottie_rawRes="@raw/musiclottie"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="10dp"
-                        android:text="Recently Played"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                        android:textColor="#F44336"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/lottieMain"
-                        app:layout_constraintStart_toEndOf="@+id/lottieMain"
-                        app:layout_constraintTop_toTopOf="@+id/lottieMain" />
-
-
-                    <ImageView
-                        android:id="@+id/recentlyPlayedImg1"
-                        android:layout_width="0dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/recenlyplayedtone"
-                        app:layout_constraintEnd_toStartOf="@id/recentlyPlayedImg2"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/lottieMain" />
-
-                    <TextView
-                        android:id="@+id/bowieText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
-                        android:text="Bowie Legacy"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white"
-                        app:layout_constraintTop_toBottomOf="@id/recentlyPlayedImg1"
-                        app:layout_constraintStart_toStartOf="@id/recentlyPlayedImg1"
-                        app:layout_constraintEnd_toEndOf="@id/recentlyPlayedImg1"
-                        />
-
-                    <ImageView
-                        android:id="@+id/recentlyPlayedImg2"
-                        android:layout_width="0dp"
-                        android:layout_height="100dp"
-                        android:layout_marginEnd="10dp"
-                        android:src="@drawable/recenlyplayedtwo"
-                        app:layout_constraintBottom_toBottomOf="@id/recentlyPlayedImg1"
-                        app:layout_constraintEnd_toStartOf="@id/recentlyPlayedImg3"
-                        app:layout_constraintStart_toEndOf="@id/recentlyPlayedImg1"
-                        app:layout_constraintTop_toTopOf="@id/recentlyPlayedImg1" />
-
-                    <TextView
-                        android:id="@+id/edText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ed Perfect"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="@+id/bowieText"
-                        app:layout_constraintEnd_toEndOf="@id/recentlyPlayedImg2"
-                        app:layout_constraintStart_toStartOf="@id/recentlyPlayedImg2"
-                        app:layout_constraintTop_toTopOf="@id/bowieText" />
-
-                    <ImageView
-                        android:id="@+id/recentlyPlayedImg3"
-                        android:layout_width="0dp"
-                        android:layout_height="100dp"
-                        android:layout_marginEnd="20dp"
-                        android:src="@drawable/recenlyplayedthree"
-                        app:layout_constraintBottom_toBottomOf="@+id/recentlyPlayedImg2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/recentlyPlayedImg2"
-                        app:layout_constraintTop_toTopOf="@+id/recentlyPlayedImg2" />
-
-                    <TextView
-                        android:id="@+id/abbaText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Abba Gold"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Small"
-                        android:textColor="@color/white"
-                        app:layout_constraintBottom_toBottomOf="@+id/edText"
-                        app:layout_constraintEnd_toEndOf="@id/recentlyPlayedImg3"
-                        app:layout_constraintStart_toStartOf="@id/recentlyPlayedImg3"
-                        app:layout_constraintTop_toTopOf="@id/bowieText" />
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/testt"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="700dp"-->
-<!--                        android:layout_marginTop="400dp"-->
-<!--                        android:background="@color/white"-->
-<!--                        app:layout_constraintBottom_toTopOf="@+id/testt2"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@+id/lottieMain" />-->
-
-<!--                    <TextView-->
-<!--                        android:id="@+id/testt2"-->
-<!--                        android:layout_width="match_parent"-->
-<!--                        android:layout_height="700dp"-->
-<!--                        android:layout_marginTop="20dp"-->
-<!--                        android:background="@color/black"-->
-<!--                        app:layout_constraintStart_toStartOf="parent"-->
-<!--                        app:layout_constraintTop_toBottomOf="@+id/testt" />-->
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.core.widget.NestedScrollView>
-        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+        <!--        </androidx.coordinatorlayout.widget.CoordinatorLayout>-->
 
 
         <!--BOTTOM VIEW-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            android:fitsSystemWindows="true"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/view2"
+            app:layout_constraintVertical_bias="0.0">
+            <!-- app:layout_behavior="@string/appbar_scrolling_view_behavior"-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="true">
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:src="@drawable/searchicon"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewSearchBar"
+                    app:layout_constraintStart_toStartOf="@+id/viewSearchBar"
+                    app:layout_constraintTop_toTopOf="@+id/viewSearchBar"
+                    app:tint="#F44336" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/viewSearchBar"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="#19FFFFFF"
+                    app:cardCornerRadius="15dp"
+                    app:layout_constraintBottom_toTopOf="@+id/categoryText"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="What do you want to listen?"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewSearchBar"
+                    app:layout_constraintStart_toEndOf="@+id/imageView7"
+                    app:layout_constraintTop_toTopOf="@+id/viewSearchBar" />
+                <!--Category-->
+                <TextView
+                    android:id="@+id/categoryText"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Categories"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#F44336"
+                    app:layout_constraintEnd_toStartOf="@id/more"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toStartOf="@+id/viewSearchBar"
+                    app:layout_constraintTop_toBottomOf="@+id/viewSearchBar" />
+
+                <TextView
+                    android:id="@+id/more"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="More"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/categoryText"
+                    app:layout_constraintEnd_toEndOf="@+id/viewSearchBar"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/categoryText"
+                    app:layout_constraintTop_toTopOf="@+id/categoryText" />
+
+                <!--HorizontalScrollView Below Category -->
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fillViewport="true"
+                    android:fitsSystemWindows="true"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="@id/more"
+                    app:layout_constraintStart_toStartOf="@id/categoryText"
+                    app:layout_constraintTop_toBottomOf="@+id/categoryText">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintUnderhorizontalScrollView1"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCategoryOne"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginBottom="5dp"
+                            app:cardCornerRadius="60dp"
+                            app:layout_constraintBottom_toTopOf="@id/trendingText"
+                            app:layout_constraintEnd_toStartOf="@id/cardCategoryTwo"
+                            app:layout_constraintStart_toStartOf="@id/constraintUnderhorizontalScrollView1"
+                            app:layout_constraintTop_toTopOf="@id/constraintUnderhorizontalScrollView1">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fitsSystemWindows="true"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/an" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/trendingText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Trending"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/constraintUnderhorizontalScrollView1"
+                            app:layout_constraintEnd_toEndOf="@id/cardCategoryOne"
+                            app:layout_constraintStart_toStartOf="@id/cardCategoryOne"
+                            app:layout_constraintTop_toBottomOf="@id/cardCategoryOne" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCategoryTwo"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="60dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardCategoryOne"
+                            app:layout_constraintEnd_toStartOf="@id/cardCategoryThree"
+                            app:layout_constraintStart_toEndOf="@id/cardCategoryOne"
+                            app:layout_constraintTop_toTopOf="@id/cardCategoryOne">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bn" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/topChartsText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Top Charts"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/trendingText"
+                            app:layout_constraintEnd_toEndOf="@id/cardCategoryTwo"
+                            app:layout_constraintStart_toStartOf="@id/cardCategoryTwo"
+                            app:layout_constraintTop_toTopOf="@+id/trendingText" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCategoryThree"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="60dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardCategoryTwo"
+                            app:layout_constraintEnd_toStartOf="@id/cardCategoryFour"
+                            app:layout_constraintStart_toEndOf="@id/cardCategoryTwo"
+                            app:layout_constraintTop_toTopOf="@id/cardCategoryTwo">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/cn" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/weeklyText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Weekly"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/trendingText"
+                            app:layout_constraintEnd_toEndOf="@id/cardCategoryThree"
+                            app:layout_constraintStart_toStartOf="@id/cardCategoryThree"
+                            app:layout_constraintTop_toTopOf="@+id/topChartsText" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCategoryFour"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="60dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardCategoryThree"
+                            app:layout_constraintEnd_toStartOf="@id/cardCategoryFive"
+                            app:layout_constraintStart_toEndOf="@id/cardCategoryThree"
+                            app:layout_constraintTop_toTopOf="@id/cardCategoryThree">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/dn" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/favoriteText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Favorites"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/trendingText"
+                            app:layout_constraintEnd_toEndOf="@id/cardCategoryFour"
+                            app:layout_constraintStart_toStartOf="@id/cardCategoryFour"
+                            app:layout_constraintTop_toTopOf="@+id/topChartsText" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCategoryFive"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="60dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardCategoryFour"
+                            app:layout_constraintEnd_toStartOf="@id/cardCategorySix"
+                            app:layout_constraintStart_toEndOf="@id/cardCategoryFour"
+                            app:layout_constraintTop_toTopOf="@id/cardCategoryFour">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/en" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/countrySpecialText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="Country's S.."
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/trendingText"
+                            app:layout_constraintEnd_toEndOf="@id/cardCategoryFive"
+                            app:layout_constraintStart_toStartOf="@id/cardCategoryFive"
+                            app:layout_constraintTop_toTopOf="@+id/topChartsText" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCategorySix"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="60dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardCategoryFive"
+                            app:layout_constraintEnd_toStartOf="@id/cardCategorySeven"
+                            app:layout_constraintStart_toEndOf="@id/cardCategoryFive"
+                            app:layout_constraintTop_toTopOf="@id/cardCategoryFive">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/fn" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/hipHop"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="Hip Hop"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/trendingText"
+                            app:layout_constraintEnd_toEndOf="@id/cardCategorySix"
+                            app:layout_constraintStart_toStartOf="@id/cardCategorySix"
+                            app:layout_constraintTop_toTopOf="@+id/topChartsText" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cardCategorySeven"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:layout_marginEnd="20dp"
+                            app:cardCornerRadius="60dp"
+                            app:layout_constraintBottom_toBottomOf="@id/cardCategorySix"
+                            app:layout_constraintEnd_toEndOf="@id/constraintUnderhorizontalScrollView1"
+                            app:layout_constraintStart_toEndOf="@id/cardCategorySix"
+                            app:layout_constraintTop_toTopOf="@id/cardCategorySix">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/gn" />
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/instrumental"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:ellipsize="end"
+                            android:text="Instrumental"
+                            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@+id/trendingText"
+                            app:layout_constraintEnd_toEndOf="@id/cardCategorySeven"
+                            app:layout_constraintStart_toStartOf="@id/cardCategorySeven"
+                            app:layout_constraintTop_toTopOf="@+id/topChartsText" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+
+                <!--VIEWPAGE2 Starts -->
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/viewPager"
+                    android:layout_width="0dp"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="20dp"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/horizontalScrollView" />
+
+                <!--VIEWPAGE2 Ends-->
+
+                <!--Artist-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieMainArtist"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    app:layout_constraintEnd_toStartOf="@id/artist"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewPager"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/discoballlottie" />
+
+                <TextView
+                    android:id="@+id/artist"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Artist"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#F44336"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/lottieMainArtist"
+                    app:layout_constraintEnd_toStartOf="@id/artistmore"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/lottieMainArtist"
+                    app:layout_constraintTop_toTopOf="@id/lottieMainArtist" />
+
+                <TextView
+                    android:id="@+id/artistmore"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end"
+                    android:text="More"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/artist"
+                    app:layout_constraintEnd_toEndOf="@+id/more"
+                    app:layout_constraintHorizontal_weight="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/artist"
+                    app:layout_constraintTop_toTopOf="@+id/artist" />
+
+                <!--Below Artist-->
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:fillViewport="true"
+                    android:fitsSystemWindows="true"
+                    android:scrollbars="none"
+                    app:layout_constraintEnd_toEndOf="@+id/artistmore"
+                    app:layout_constraintStart_toStartOf="@+id/lottieMainArtist"
+                    app:layout_constraintTop_toBottomOf="@+id/lottieMainArtist">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintUnderhorizontalScrollView2"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/justinBieberImg"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="20dp"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/justinbieber"
+                            app:layout_constraintBottom_toTopOf="@id/justinBiebertext"
+                            app:layout_constraintEnd_toStartOf="@id/marshmelloImg"
+                            app:layout_constraintStart_toStartOf="@id/constraintUnderhorizontalScrollView2"
+                            app:layout_constraintTop_toTopOf="@id/constraintUnderhorizontalScrollView2" />
+
+                        <TextView
+                            android:id="@+id/justinBiebertext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Justin Bieber"
+                            android:textColor="@color/white"
+                            app:layout_constraintEnd_toEndOf="@id/justinBieberImg"
+                            app:layout_constraintStart_toStartOf="@id/justinBieberImg"
+                            app:layout_constraintTop_toBottomOf="@id/justinBieberImg" />
+
+                        <ImageView
+                            android:id="@+id/marshmelloImg"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="15dp"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/marshmello"
+                            app:layout_constraintBottom_toBottomOf="@id/justinBieberImg"
+                            app:layout_constraintEnd_toStartOf="@id/duaLipaImg"
+                            app:layout_constraintStart_toEndOf="@id/justinBieberImg"
+                            app:layout_constraintTop_toTopOf="@id/justinBieberImg" />
+
+                        <TextView
+                            android:id="@+id/marshmellotext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Marshmello"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/justinBiebertext"
+                            app:layout_constraintEnd_toEndOf="@id/marshmelloImg"
+                            app:layout_constraintStart_toStartOf="@id/marshmelloImg"
+                            app:layout_constraintTop_toTopOf="@id/justinBiebertext" />
+
+                        <ImageView
+                            android:id="@+id/duaLipaImg"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="15dp"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/dualip"
+                            app:layout_constraintBottom_toBottomOf="@id/marshmelloImg"
+                            app:layout_constraintEnd_toStartOf="@id/theweekendImg"
+                            app:layout_constraintStart_toEndOf="@id/marshmelloImg"
+                            app:layout_constraintTop_toTopOf="@id/marshmelloImg" />
+
+                        <TextView
+                            android:id="@+id/duaLipatext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Dua Lipa"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/marshmellotext"
+                            app:layout_constraintEnd_toEndOf="@id/duaLipaImg"
+                            app:layout_constraintStart_toStartOf="@id/duaLipaImg"
+                            app:layout_constraintTop_toTopOf="@id/marshmellotext" />
+
+                        <ImageView
+                            android:id="@+id/theweekendImg"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="15dp"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/theweekendmini"
+                            app:layout_constraintBottom_toBottomOf="@id/duaLipaImg"
+                            app:layout_constraintEnd_toStartOf="@id/drakeImg"
+                            app:layout_constraintStart_toEndOf="@id/duaLipaImg"
+                            app:layout_constraintTop_toTopOf="@id/duaLipaImg" />
+
+                        <TextView
+                            android:id="@+id/theweekendtext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="The Weekend"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/duaLipatext"
+                            app:layout_constraintEnd_toEndOf="@id/theweekendImg"
+                            app:layout_constraintStart_toStartOf="@id/theweekendImg"
+                            app:layout_constraintTop_toTopOf="@id/duaLipatext" />
+
+                        <ImageView
+                            android:id="@+id/drakeImg"
+                            android:layout_width="0dp"
+                            android:layout_height="100dp"
+                            android:layout_marginEnd="15dp"
+                            android:fitsSystemWindows="true"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/drakemini"
+                            app:layout_constraintBottom_toBottomOf="@id/theweekendImg"
+                            app:layout_constraintEnd_toEndOf="@id/constraintUnderhorizontalScrollView2"
+                            app:layout_constraintStart_toEndOf="@id/theweekendImg"
+                            app:layout_constraintTop_toTopOf="@id/theweekendImg" />
+
+                        <TextView
+                            android:id="@+id/draketext"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Drake"
+                            android:textColor="@color/white"
+                            app:layout_constraintBottom_toBottomOf="@id/marshmellotext"
+                            app:layout_constraintEnd_toEndOf="@id/drakeImg"
+                            app:layout_constraintStart_toStartOf="@id/drakeImg"
+                            app:layout_constraintTop_toTopOf="@id/marshmellotext" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+                <!--Artist Ends-->
+
+                <!--View Below Artist-->
+                <View
+                    android:id="@+id/viewTaylorSwift"
+                    android:layout_width="0dp"
+                    android:layout_height="170dp"
+                    android:layout_marginTop="40dp"
+                    android:background="#17000000"
+                    app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/horizontalScrollView2"
+                    app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView2" />
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/taylorsmall"
+                    app:layout_constraintStart_toStartOf="@+id/viewTaylorSwift"
+                    app:layout_constraintTop_toTopOf="@+id/viewTaylorSwift" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="2dp"
+                    android:text="New Releases:"
+                    android:textColor="#F44336"
+                    app:layout_constraintStart_toEndOf="@+id/imageView2"
+                    app:layout_constraintTop_toTopOf="@+id/imageView2" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:text="Taylor Swift"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView2"
+                    app:layout_constraintStart_toStartOf="@+id/textView6" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/rectaylor"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView5"
+                    app:layout_constraintEnd_toEndOf="@id/viewTaylorSwift"
+                    app:layout_constraintStart_toStartOf="@id/viewTaylorSwift"
+                    app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:src="@drawable/whitebgtaylor"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewTaylorSwift"
+                    app:layout_constraintStart_toStartOf="@+id/imageView2" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Midnights"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/imageView5"
+                    app:layout_constraintTop_toTopOf="@+id/imageView6" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Album"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@+id/textView10"
+                    app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/taylorSwiftmusicIconCardViewMain"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:backgroundTint="#43FFFFFF"
+                    app:cardCornerRadius="70dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewTaylorSwift"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView6">
+
+                    <ImageView
+                        android:id="@+id/taylorSwiftmusicPlay"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/baseline_play_arrow_24" />
+                </androidx.cardview.widget.CardView>
+
+                <!--View Below Artist Ends-->
+
+                <!-- RECENTLY PLAYED-->
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieMain"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="40dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/viewTaylorSwift"
+                    app:lottie_autoPlay="true"
+                    app:lottie_loop="true"
+                    app:lottie_rawRes="@raw/musiclottie" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="Recently Played"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="#F44336"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@+id/lottieMain"
+                    app:layout_constraintStart_toEndOf="@+id/lottieMain"
+                    app:layout_constraintTop_toTopOf="@+id/lottieMain" />
+
+
+                <ImageView
+                    android:id="@+id/recentlyPlayedImg1"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/recenlyplayedtone"
+                    app:layout_constraintEnd_toStartOf="@id/recentlyPlayedImg2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lottieMain" />
+
+                <TextView
+                    android:id="@+id/bowieText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="Bowie Legacy"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="@id/recentlyPlayedImg1"
+                    app:layout_constraintStart_toStartOf="@id/recentlyPlayedImg1"
+                    app:layout_constraintTop_toBottomOf="@id/recentlyPlayedImg1" />
+
+                <ImageView
+                    android:id="@+id/recentlyPlayedImg2"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/recenlyplayedtwo"
+                    app:layout_constraintBottom_toBottomOf="@id/recentlyPlayedImg1"
+                    app:layout_constraintEnd_toStartOf="@id/recentlyPlayedImg3"
+                    app:layout_constraintStart_toEndOf="@id/recentlyPlayedImg1"
+                    app:layout_constraintTop_toTopOf="@id/recentlyPlayedImg1" />
+
+                <TextView
+                    android:id="@+id/edText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ed Perfect"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/bowieText"
+                    app:layout_constraintEnd_toEndOf="@id/recentlyPlayedImg2"
+                    app:layout_constraintStart_toStartOf="@id/recentlyPlayedImg2"
+                    app:layout_constraintTop_toTopOf="@id/bowieText" />
+
+                <ImageView
+                    android:id="@+id/recentlyPlayedImg3"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="20dp"
+                    android:src="@drawable/recenlyplayedthree"
+                    app:layout_constraintBottom_toBottomOf="@+id/recentlyPlayedImg2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/recentlyPlayedImg2"
+                    app:layout_constraintTop_toTopOf="@+id/recentlyPlayedImg2" />
+
+                <TextView
+                    android:id="@+id/abbaText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Abba Gold"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/edText"
+                    app:layout_constraintEnd_toEndOf="@id/recentlyPlayedImg3"
+                    app:layout_constraintStart_toStartOf="@id/recentlyPlayedImg3"
+                    app:layout_constraintTop_toTopOf="@id/bowieText" />
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/testt"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="700dp"-->
+                <!--                        android:layout_marginTop="400dp"-->
+                <!--                        android:background="@color/white"-->
+                <!--                        app:layout_constraintBottom_toTopOf="@+id/testt2"-->
+                <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                <!--                        app:layout_constraintTop_toBottomOf="@+id/lottieMain" />-->
+
+                <!--                    <TextView-->
+                <!--                        android:id="@+id/testt2"-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="700dp"-->
+                <!--                        android:layout_marginTop="20dp"-->
+                <!--                        android:background="@color/black"-->
+                <!--                        app:layout_constraintStart_toStartOf="parent"-->
+                <!--                        app:layout_constraintTop_toBottomOf="@+id/testt" />-->
+
+                <View
+                    android:id="@+id/SettingsView"
+                    android:layout_width="0dp"
+                    android:layout_height="220dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginBottom="80dp"
+                    android:background="@drawable/grey_background_for_settings_main"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@id/recentlyPlayedImg3"
+                    app:layout_constraintStart_toStartOf="@id/recentlyPlayedImg1"
+                    app:layout_constraintTop_toBottomOf="@id/bowieText" />
+
+                <TextView
+                    android:id="@+id/craftedWithLoveText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:text="Quick Settings"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/bowieText"
+                    app:layout_constraintTop_toTopOf="@id/SettingsView" />
+
+                <TextView
+                    android:id="@+id/downloadQualityText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Download Quality"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@id/musicLanguageText"
+                    app:layout_constraintStart_toStartOf="@id/craftedWithLoveText"
+                    app:layout_constraintTop_toBottomOf="@id/craftedWithLoveText" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="HD"
+                    android:textColor="#F44336"
+                    app:layout_constraintBottom_toBottomOf="@id/downloadQualityText"
+                    app:layout_constraintEnd_toStartOf="@id/forwardImgAfterHDText"
+                    app:layout_constraintTop_toTopOf="@id/downloadQualityText" />
+
+                <ImageView
+                    android:id="@+id/forwardImgAfterHDText"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                    app:layout_constraintEnd_toEndOf="@id/abbaText"
+                    app:layout_constraintTop_toTopOf="@+id/textView12" />
+
+                <TextView
+                    android:id="@+id/musicLanguageText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Music Language"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@id/sleepTimerText"
+                    app:layout_constraintStart_toStartOf="@+id/downloadQualityText"
+                    app:layout_constraintTop_toBottomOf="@id/downloadQualityText" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:text="Hindi, English"
+                    android:textColor="#F44336"
+                    app:layout_constraintBottom_toBottomOf="@id/musicLanguageText"
+                    app:layout_constraintEnd_toStartOf="@id/forwardImgAfterLanguageText"
+                    app:layout_constraintTop_toTopOf="@id/musicLanguageText" />
+
+                <ImageView
+                    android:id="@+id/forwardImgAfterLanguageText"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@id/textView11"
+                    app:layout_constraintEnd_toEndOf="@id/forwardImgAfterHDText"
+                    app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+
+                <TextView
+                    android:id="@+id/sleepTimerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Sleep Timer"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toTopOf="@id/viewAllSettings"
+                    app:layout_constraintStart_toStartOf="@id/musicLanguageText"
+                    app:layout_constraintTop_toBottomOf="@id/musicLanguageText" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:thumbTint="#F44336"
+                    app:layout_constraintBottom_toBottomOf="@+id/sleepTimerText"
+                    app:layout_constraintEnd_toEndOf="@+id/forwardImgAfterLanguageText"
+                    app:layout_constraintTop_toTopOf="@id/sleepTimerText"
+                    tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+                <TextView
+                    android:id="@+id/viewAllSettings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:text="View All Settings"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                    android:textColor="#F44336"
+                    app:layout_constraintBottom_toBottomOf="@id/SettingsView"
+                    app:layout_constraintStart_toStartOf="@id/sleepTimerText"
+                    app:layout_constraintTop_toBottomOf="@id/sleepTimerText" />
+
+                <ImageView
+                    android:id="@+id/forwardImgAfterViewAllSettingsText"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:src="@drawable/baseline_arrow_forward_ios_24"
+                    app:layout_constraintBottom_toBottomOf="@+id/viewAllSettings"
+                    app:layout_constraintEnd_toEndOf="@id/forwardImgAfterLanguageText"
+                    app:layout_constraintTop_toTopOf="@+id/viewAllSettings" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
         <View
             android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="70dp"
-            android:background="@color/black"
+            android:background="@drawable/gradient_transparent_bg"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

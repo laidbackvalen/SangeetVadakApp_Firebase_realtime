@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/black"
     tools:context=".PlayMusicActivityMain">
+
     <ImageView
         android:id="@+id/back"
         android:layout_width="25dp"
@@ -179,37 +180,39 @@
     </HorizontalScrollView>
 
     <com.smarteist.autoimageslider.SliderView
-        android:id="@+id/sliderView"
+        android:id="@+id/sliderViewMusicPlayerActivity"
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:fitsSystemWindows="true"
-        app:layout_constraintBottom_toTopOf="@id/view"
+        app:layout_constraintBottom_toTopOf="@id/viewMusicPlayerActivity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hotizontalscrollmainact" />
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/viewMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="70dp"
+        android:background="@drawable/gradient_transparent_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+    <!--  FULLY TRANSPARENT BACKGROUND           android:background=""-->
 
     <ImageView
-        android:id="@+id/homeIcon"
+        android:id="@+id/homeIconMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toStartOf="@id/musicIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/viewMusicPlayerActivity"
+        app:layout_constraintEnd_toStartOf="@id/musicIconMusicPlayerActivity"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/viewMusicPlayerActivity"
         app:srcCompat="@drawable/baseline_home_24" />
 
     <TextView
-        android:id="@+id/textHome"
+        android:id="@+id/textHomeMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
         android:layout_marginBottom="10dp"
@@ -217,105 +220,98 @@
         android:text="Home"
         android:textColor="@color/white"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@id/view"
-        app:layout_constraintEnd_toEndOf="@id/homeIcon"
-        app:layout_constraintStart_toStartOf="@id/homeIcon"
-        app:layout_constraintTop_toBottomOf="@id/homeIcon" />
+        app:layout_constraintBottom_toBottomOf="@id/viewMusicPlayerActivity"
+        app:layout_constraintEnd_toEndOf="@id/homeIconMusicPlayerActivity"
+        app:layout_constraintStart_toStartOf="@id/homeIconMusicPlayerActivity"
+        app:layout_constraintTop_toBottomOf="@id/homeIconMusicPlayerActivity" />
 
     <ImageView
-        android:id="@+id/musicIcon"
+        android:id="@+id/musicIconMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/homeIcon"
-        app:layout_constraintEnd_toStartOf="@id/musicPlay"
-        app:layout_constraintStart_toEndOf="@+id/homeIcon"
-        app:layout_constraintTop_toTopOf="@+id/homeIcon"
+        app:layout_constraintBottom_toBottomOf="@+id/homeIconMusicPlayerActivity"
+        app:layout_constraintEnd_toStartOf="@+id/musicIconCardViewMusicPlayerActivity"
+        app:layout_constraintStart_toEndOf="@+id/homeIconMusicPlayerActivity"
+        app:layout_constraintTop_toTopOf="@+id/homeIconMusicPlayerActivity"
         app:srcCompat="@drawable/baseline_music_note_24" />
 
     <TextView
-        android:id="@+id/musicText"
+        android:id="@+id/musicTextMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
         android:gravity="center"
         android:text="My Music"
         android:textColor="@color/white"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@id/textHome"
-        app:layout_constraintEnd_toStartOf="@id/musicPlay"
-        app:layout_constraintStart_toEndOf="@id/textHome"
-        app:layout_constraintTop_toTopOf="@id/textHome" />
+        app:layout_constraintBottom_toBottomOf="@id/textHomeMusicPlayerActivity"
+        app:layout_constraintEnd_toStartOf="@id/musicIconCardViewMusicPlayerActivity"
+        app:layout_constraintStart_toEndOf="@id/textHomeMusicPlayerActivity"
+        app:layout_constraintTop_toTopOf="@id/textHomeMusicPlayerActivity" />
 
-    <ImageView
-        android:id="@+id/musicPlay"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/musicIconCardViewMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="70dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/tunes"
-        app:layout_constraintStart_toEndOf="@+id/musicIcon"
-        app:layout_constraintTop_toTopOf="@+id/view"
-        app:srcCompat="@drawable/baseline_play_arrow_24" />
+        android:backgroundTint="#E42B2B"
+        app:cardCornerRadius="70dp"
+        app:layout_constraintBottom_toBottomOf="@id/viewMusicPlayerActivity"
+        app:layout_constraintEnd_toStartOf="@id/tunesMusicPlayerActivity"
+        app:layout_constraintStart_toEndOf="@id/musicIconMusicPlayerActivity"
+        app:layout_constraintTop_toTopOf="@+id/viewMusicPlayerActivity">
 
-    <!--    <TextView-->
-    <!--        android:id="@+id/textHome"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="25dp"-->
-    <!--        android:layout_marginBottom="10dp"-->
-    <!--        android:gravity="center"-->
-    <!--        android:text="Home"-->
-    <!--        android:textColor="@color/white"-->
-    <!--        android:textSize="10sp"-->
-    <!--        app:layout_constraintBottom_toBottomOf="@id/view"-->
-    <!--        app:layout_constraintEnd_toEndOf="@id/homeIcon"-->
-    <!--        app:layout_constraintStart_toStartOf="@id/homeIcon"-->
-    <!--        app:layout_constraintTop_toBottomOf="@id/homeIcon" />-->
+        <ImageView
+            android:id="@+id/musicPlayMusicPlayerActivity"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/baseline_play_arrow_24" />
+    </androidx.cardview.widget.CardView>
+
 
     <ImageView
-        android:id="@+id/tunes"
+        android:id="@+id/tunesMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/musicPlay"
-        app:layout_constraintEnd_toStartOf="@id/Settings"
-        app:layout_constraintStart_toEndOf="@+id/musicPlay"
-        app:layout_constraintTop_toTopOf="@+id/musicPlay"
+        app:layout_constraintBottom_toBottomOf="@+id/musicIconMusicPlayerActivity"
+        app:layout_constraintEnd_toStartOf="@id/settingsMusicPlayerActivity"
+        app:layout_constraintStart_toEndOf="@+id/musicIconCardViewMusicPlayerActivity"
+        app:layout_constraintTop_toTopOf="@+id/musicIconMusicPlayerActivity"
         app:srcCompat="@drawable/baseline_tune_24" />
 
     <TextView
-        android:id="@+id/textHellotunes"
+        android:id="@+id/textHellotunesMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
-
         android:gravity="center"
         android:text="Hello Tunes"
         android:textColor="@color/white"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@id/musicText"
-        app:layout_constraintEnd_toStartOf="@id/textSettings"
-        app:layout_constraintStart_toEndOf="@id/musicPlay"
-        app:layout_constraintTop_toTopOf="@id/musicText" />
+        app:layout_constraintBottom_toBottomOf="@id/musicTextMusicPlayerActivity"
+        app:layout_constraintEnd_toStartOf="@id/textSettingsMusicPlayerActivity"
+        app:layout_constraintStart_toEndOf="@id/musicIconCardViewMusicPlayerActivity"
+        app:layout_constraintTop_toTopOf="@id/musicTextMusicPlayerActivity" />
 
     <ImageView
-        android:id="@+id/Settings"
+        android:id="@+id/settingsMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
-        app:layout_constraintBottom_toBottomOf="@+id/tunes"
+        app:layout_constraintBottom_toBottomOf="@+id/tunesMusicPlayerActivity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/tunes"
-        app:layout_constraintTop_toTopOf="@+id/tunes"
+        app:layout_constraintStart_toEndOf="@id/tunesMusicPlayerActivity"
+        app:layout_constraintTop_toTopOf="@+id/tunesMusicPlayerActivity"
         app:srcCompat="@drawable/baseline_settings_suggest_24" />
 
     <TextView
-        android:id="@+id/textSettings"
+        android:id="@+id/textSettingsMusicPlayerActivity"
         android:layout_width="0dp"
         android:layout_height="25dp"
         android:gravity="center"
         android:text="Settings"
         android:textColor="@color/white"
         android:textSize="10sp"
-        app:layout_constraintBottom_toBottomOf="@id/textHellotunes"
+        app:layout_constraintBottom_toBottomOf="@id/textHellotunesMusicPlayerActivity"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/textHellotunes"
-        app:layout_constraintTop_toTopOf="@id/textHellotunes" />
+        app:layout_constraintStart_toEndOf="@id/textHellotunesMusicPlayerActivity"
+        app:layout_constraintTop_toTopOf="@id/textHellotunesMusicPlayerActivity" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

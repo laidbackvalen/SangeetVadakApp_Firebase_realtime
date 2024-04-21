@@ -190,6 +190,7 @@ public class SavingDataInFirebaseRealtimeDatabase extends AppCompatActivity {
 //              String key = databaseReference.push().getKey().toString();   //to know push key
 //                Toast.makeText(SavingDataInFirebaseRealtimeDatabase.this, "" + key, Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(SavingDataInFirebaseRealtimeDatabase.this, MainActivity.class));
+                finish();
 
             }
 
@@ -211,5 +212,4 @@ public class SavingDataInFirebaseRealtimeDatabase extends AppCompatActivity {
         });
 
     }
-
 }

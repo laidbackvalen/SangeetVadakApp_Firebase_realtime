@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -54,7 +55,6 @@ public class RetrievingDataInUserProfile extends AppCompatActivity {
 
             }
         });
-
 
 
         updateYourProfile.setOnClickListener(new View.OnClickListener() {
@@ -105,9 +105,11 @@ public class RetrievingDataInUserProfile extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
-
 //                    for(DataSnapshot postSnapshot : snapshot.getChildren()){
                     ModelClassData modelClassData = snapshot.getValue(ModelClassData.class);
+
+//                    String a = snapshot.child("name").getValue().toString();    //BEST wAY tO dO iT
+//                    Toast.makeText(RetrievingDataInUserProfile.this, ""+a, Toast.LENGTH_SHORT).show();
 
                     String name = modelClassData.getName();
                     String countrycode = modelClassData.getCountrycode();
@@ -144,6 +146,7 @@ public class RetrievingDataInUserProfile extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
+                firebaseAuth.signOut();
                 finish();
             }
         }, 2000);
